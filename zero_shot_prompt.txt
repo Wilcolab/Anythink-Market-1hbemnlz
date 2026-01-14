@@ -1,0 +1,9 @@
+Make a function to convert text to snake case
+function toSnakeCase(str) {
+  return str
+    .trim()                               // remove leading/trailing spaces
+    .replace(/([a-z])([A-Z])/g, "$1_$2")   // handle camelCase → camel_case
+    .replace(/[\s\-]+/g, "_")              // spaces & hyphens → underscore
+    .replace(/_+/g, "_")                   // collapse multiple underscores
+    .toLowerCase();                        // final lowercase
+}
