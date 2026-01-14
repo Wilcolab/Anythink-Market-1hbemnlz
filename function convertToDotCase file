@@ -1,0 +1,26 @@
+function convertToDotCase(input) {
+    // Validate input type
+    if (input === null || input === undefined) {
+        throw new Error('Input cannot be null or undefined');
+    }
+
+    // Convert to string and trim
+    const stringInput = String(input).trim();
+
+    // Check if empty after trimming
+    if (stringInput.length === 0) {
+        throw new Error('Input cannot be empty');
+    }
+
+    // Convert to lowercase and replace spaces/hyphens/underscores with dots
+    const dotCased = stringInput
+        .toLowerCase()
+        .replace(/[\s_-]+/g, '.');
+
+    return dotCased;
+}
+
+// Example usage:
+// console.log(convertToDotCase('Hello World')); // "hello.world"
+// console.log(convertToDotCase('Test-Input')); // "test.input"
+// console.log(convertToDotCase('snake_case_example')); // "snake.case.example"
