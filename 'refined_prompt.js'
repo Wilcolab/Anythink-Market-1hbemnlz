@@ -1,0 +1,11 @@
+this is my code for refined
+function toCamelCase(str) {
+  return str
+    .toLowerCase()                     // normalize everything to lowercase
+    .split(/[\s_\-]+/)                 // split on space, underscore, or hyphen
+    .map((word, index) => {
+      if (index === 0) return word;    // first word stays lowercase
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join('');
+}
