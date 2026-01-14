@@ -1,0 +1,29 @@
+#stina's_code
+write a camel case function for strings with multiple words that throws errors
+function toCamelCase(str) {
+    return str
+        .toLowerCase() // Convert the entire string to lowercase
+        .split(/[^a-zA-Z0-9]+/) // Split by non-alphanumeric characters
+        .map((word, index) => {
+            // Capitalize the first letter of each word except the first one
+            if (index === 0) return word; // Keep the first word in lowercase
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        })
+        .join(''); // Join the words back together
+}
+
+// Example usage:
+console.log(toCamelCase('first name')); // firstName
+console.log(toCamelCase('user_id')); // userId
+console.log(toCamelCase('SCREEN_NAME')); // screenName
+console.log(toCamelCase('mobile-number')); // mobileNumber
+
+git add .
+git commit -m 
+git checkout
+git Push
+git clone https://github.com/Wilcolab/Anythink-Market-1hbemnlz.git
+git add .
+git commit -m
+git Push
+Create a new file called `refined_prompt.js` and use Copilot (Cmd+I on Mac or Ctrl+I on Windows/Linux) to generate your robust camelCase function using the refined prompt you just created.
